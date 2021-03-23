@@ -14,5 +14,14 @@ module.exports = (app)=>{
         req.logout();
         res.send(req.user);
     })
+
+    app.get('/diary',(req,res)=>{
+        if(!req.user){
+            res.redirect('/login')
+        }
+        else{
+            res.render('Diary')
+        }
+    })
 }
 
