@@ -23,5 +23,6 @@ module.exports = (app)=>{
             res.render('Diary')
         }
     })
+
 }
 

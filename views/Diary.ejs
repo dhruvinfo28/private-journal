@@ -28,14 +28,17 @@
       <a href=""><button class="btn-03">Your Stats</button></a>
     </div>
     <div>
-      <textarea
-        name="journals"
-        id=""
-        placeholder="Jot down your thoughts . . ."
-        autocapitalize="sentences"
-        spellcheck="true"
-        autofocus
-      ></textarea>
+      <form action="/addJournal" method="post"> 
+        <textarea
+          name="journals"
+          id=""
+          placeholder="Jot down your thoughts . . ."
+          autocapitalize="sentences"
+          spellcheck="true"
+          autofocus
+        ></textarea>
+        <a target="_blank" rel="noopener noreferrer"><button type="submit">Submit</button></a>
+      </form>
     </div>
     <div>
       <a href=""
