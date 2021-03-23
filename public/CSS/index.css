@@ -221,3 +221,14 @@ label[for="psw"] {
 .btn-04:hover {
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0);
 }
+
+#sub{
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
+
+#sub:hover{
+  cursor: pointer;
+}

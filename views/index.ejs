@@ -9,10 +9,10 @@
       name="google-signin-client_id"
       content="YOUR_CLIENT_ID.apps.googleusercontent.com"
     />
-    <link rel="stylesheet" href="./Styling/index.css" />
-    <link rel="stylesheet" href="./Styling/GAuth.css">
-    <script src="https://apis.google.com/js/api:client.js"></script>
-    <script src="/Scripts/GAuth.js"></script>
+    <link rel="stylesheet" href="./CSS/index.css" />
+    <link rel="stylesheet" href="./CSS/GAuth.css">
+    <!-- <script src="https://apis.google.com/js/api:client.js"></script> -->
+    <!-- <script src="/Scripts/GAuth.js"></script> -->
   </head>
   <body>
     <div class="navbar">
@@ -35,8 +35,14 @@
           <!-- In the callback, you would hide the gSignInWrapper element on a successful sign in -->
           <div id="gSignInWrapper">
             <div id="customBtn" class="customGPlusSignIn">
-              <span class="buttonText">Sign in with</span>
-              <span class="icon"></span>
+              <form action="/google/auth" method="get">
+                <button type="submit" id="sub">
+                  <span class="buttonText" >
+                    Sign in with
+                    </span>
+                    <span class="icon"></span>
+                </button>
+              </form>
             </div>
           </div>
           <div id="name"></div>
