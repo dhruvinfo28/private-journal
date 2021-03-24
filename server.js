@@ -33,6 +33,10 @@ mongoose.connect(MONGO_URI).then(()=>{console.log('Connected')})
 app.get('/login',(req,res)=>{
     res.render('index');
 })
+
+app.get('/home', (req,res)=>{
+    res.render('homePage')
+})
 //Auth routes
 
 require('./routes/authRoutes')(app);
