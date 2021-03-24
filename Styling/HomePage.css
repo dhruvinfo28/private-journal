@@ -21,6 +21,7 @@ body {
   border-radius: 15px;
   margin: 2% 2.5%;
   position: fixed;
+  z-index: 1;
 }
 
 .container {
@@ -68,81 +69,88 @@ li {
   padding: 24px 40px;
 }
 
-/* a:active {
-  margin: 5%;
-  width: 70px;
-  height: 20px;
-  background: #b8e5ff;
-  border-radius: 10px;
-} */
-
-textarea {
-  max-width: 1280px;
-  width: 1280px;
-  height: 532px;
-  background: #ffffff;
-  border: 7px solid #000000;
-  box-sizing: border-box;
-  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
-  border-radius: 15px;
-  margin: 3% 5.5% 5% 6%;
-}
-
-textarea[placeholder="Jot down your thoughts . . ."] {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 37px;
+.container-04 {
   display: flex;
-  letter-spacing: 0.1em;
-  padding: 2%;
-  color: #000000;
+  margin: 12% 0.5%;
 }
 
 .container-01 {
-  margin: 13% 5% 0 5%;
+  position: relative;
+  width: 415px;
+  height: 686px;
+  left: 6%;
+  background: #ffffff;
+  border: 7px solid #000000;
+  box-sizing: border-box;
+  border-radius: 15px;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
 }
 
-button {
-  width: 340px;
+.container-02 {
+  position: relative;
+  left: -6%;
+  width: 415px;
+  height: 686px;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+  border: 7px solid #000000;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.block-01 {
+  width: 85%;
   height: 55px;
-  margin: 0 0 0 5.5%;
-  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
   background: #b8e5ff;
   border: 5px solid #000000;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 25px;
-  line-height: 37px;
-  align-items: center;
+  margin: 4% 6%;
   text-align: center;
-  letter-spacing: 0.1em;
-  color: #000000;
+  align-items: center;
+  letter-spacing: 0.2em;
+  vertical-align: middle;
 }
 
-button:hover {
-  box-shadow: 5px 5px 0px rgba(0, 0, 0, 00);
+.block-01 h1 {
+  margin-top: 3%;
 }
 
-button:active {
-  box-shadow: 5px 5px 0px rgba(0, 0, 0, 00);
+.img-01 {
+  margin-top: 2%;
 }
 
-.btn-04 {
-  width: 558px;
-  height: 76px;
+.container-03 {
+  width: 86%;
+  height: 440px;
+  margin: -10% 5% 5% 6.5%;
+  background: #ffffff;
+  border: 7px solid #000000;
+  box-sizing: border-box;
+  border-radius: 15px;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+.block-02 {
+  width: 29%;
+  height: 55px;
+  margin: 1% 35%;
   background: #b8e5ff;
   border: 5px solid #000000;
-  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  margin: -5% 30%;
+  text-align: center;
+  align-items: center;
+  letter-spacing: 0.2em;
+  vertical-align: middle;
+}
+
+.block-02 h1 {
+  margin-top: 2%;
 }
 
 footer {
-  width: 1360px;
+  width: 92%;
   height: 101px;
   margin: 6% 3% 2%;
   background: #b8e5ff;
@@ -150,16 +158,5 @@ footer {
   box-sizing: border-box;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  padding: 2% 35%;
+  padding: 2% 34%;
 }
-
-/* .active {
-  align-items: center;
-  width: 80%;
-  height: 70px;
-  background: #b8e5ff;
-  border: 5px solid #000000;
-  box-sizing: border-box;
-  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-} */
