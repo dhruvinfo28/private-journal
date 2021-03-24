@@ -16,6 +16,10 @@ const journalSchema = new mongoose.Schema({
     date:{
         type:Date,
         required:true
+    },
+    sentiment:{
+        type: Number,
+        required:true
     }
 }) 
 

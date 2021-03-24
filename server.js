@@ -4,6 +4,8 @@ const passport  = require('passport')
 const mongoose = require('mongoose')
 const cookieSession = require('cookie-session')
 const Journal = require('./models/journal')
+const vader = require('vader-sentiment');
+
 
 const app = express();
 
@@ -37,25 +39,53 @@ app.get('/login',(req,res)=>{
 app.get('/', (req,res)=>{
     res.render('homePage')
 })
-//Auth routes
+//OAuth routes
 
 require('./routes/authRoutes')(app);
 
+//Adding a journal
 app.post('/addJournal',(req,res)=>{
     if(req.user){
         const email = req.user.email;
         const name = req.user.name;
+        const intensity = vader.SentimentIntensityAnalyzer.polarity_scores(req.body.journals);
         new Journal({
             email,
             name,
             journal: req.body.journals,
-            date: Date.now()
+            date: Date.now(),
+            sentiment: intensity.compound,
         }).save()
             .then((a)=>{
                 //Prompt saying journal recorded
                 console.log(a)
                 res.redirect('/diary')
             })
+    }
+})
+
+//Route for overall analysis of daily journals
+
+app.get('/yourStats',(req,res)=>{
+    if(req.user){
+        Journal.find({email:req.user.email})
+            .then((result)=>{
+                //compounds contain all compound scores for journals so far
+                let compounds = [];
+                for(let i=0;i<result.length;i++){
+                    compounds.push(result[i].sentiment);
+                }
+                res.render('stats',{
+                   scoreArray: compounds
+                })
+            })
+            .catch((err)=>{
+                console.log(err)
+                res.send('Please try again later')
+            })
+    }
+    else{
+        res.redirect('/login')
     }
 })
 
