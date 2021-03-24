@@ -10,55 +10,38 @@
       content="YOUR_CLIENT_ID.apps.googleusercontent.com"
     />
     <link rel="stylesheet" href="./CSS/index.css" />
-    <link rel="stylesheet" href="./CSS/GAuth.css">
+    <link rel="stylesheet" href="./CSS/GAuth.css" />
     <!-- <script src="https://apis.google.com/js/api:client.js"></script> -->
     <!-- <script src="/Scripts/GAuth.js"></script> -->
   </head>
   <body>
-    <div class="navbar">
-      <!-- <div class="leftNav">
-         <h1>Private Journal</h1> 
-           <span> pun Intended</span> 
-      </div> -->
-      <!-- <div class="rightNav">
-        <button class="btn-01">Sign In</button>
-        <a href="LogIn.html"><button class="btn-02">Log In</button></a>
-      </div> -->
-    </div>
-    <div class="container">
-    <div class="leftCol">
-      <img class="img-01" src="./Assets/signIn.svg" alt="Opening of a window" />
-    </div>
-    <div class="rightCol">
-         <div class="box"> 
-          <h1>Private Journal</h1>
-          <!-- In the callback, you would hide the gSignInWrapper element on a successful sign in -->
-          <div id="gSignInWrapper">
-            <div id="customBtn" class="customGPlusSignIn">
-              <form action="/google/auth" method="get">
-                <button type="submit" id="sub">
-                  <span class="buttonText" >
-                    Sign in with
-                    </span>
-                    <span class="icon"></span>
-                </button>
-              </form>
-            </div>
-          </div>
-          <div id="name"></div>
-          <script>
-            startApp();
-          </script>
-          <!-- <h5>-or-</h5>
-        <form action="">
-            <label for="email"><b>Sign in with E-Mail</b></label>
-            <input type="text" placeholder="Enter E-Mail" name="email" required>
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>        
-          <button type="submit" class="btn-04"></button>
-        </div>
-        </form> -->
+    <h1>PriJour</h1>
+    <div id="gSignInWrapper">
+      <div id="customBtn" class="customGPlusSignIn">
+        <form action="/google/auth" method="get">
+          <button type="submit" id="sub">
+            <span class="buttonText"> Sign in with </span>
+            <span class="icon"></span>
+          </button>
+        </form>
       </div>
+    </div>
+    <div id="name"></div>
+    <script>
+      startApp();
+    </script>
+    <div class="box">
+      <img src="./Assets/signIn.svg" alt="" />
+      <h1>
+        Hola Amigos, Welcome to Prijour. This place is a free talk therapist,
+        you can spill all of your thoughts, feelings and emotions,no matter
+        what, without anyone judging you. While journaling has its own merits in
+        terms of getting a closure but to top it all off, this website allows
+        user to experience their path of transition from what’s finished to
+        something new and to guide their way out of a puddle of negativity and
+        depression by taking a cognizance of user’s emotions as expressed in
+        their journal.
+      </h1>
     </div>
   </body>
 </html>

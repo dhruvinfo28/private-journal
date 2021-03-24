@@ -21,7 +21,6 @@ body {
   border-radius: 15px;
   margin: 2% 2.5%;
   position: fixed;
-  z-index: 1;
 }
 
 .container {
@@ -32,7 +31,7 @@ body {
   padding: 2% 0% 0 10%;
 }
 
-h1 {
+.leftNav h1 {
   font-family: Poppins;
   font-style: normal;
   font-weight: 900;
@@ -68,110 +67,96 @@ li {
   padding: 24px 40px;
 }
 
-.container-04 {
-  display: flex;
-  margin: 12% 0.5%;
+.leftCol {
+  max-width: 20%;
+  position: fixed;
 }
 
 .container-01 {
-  position: relative;
-  width: 415px;
-  height: 686px;
-  left: 6%;
+  width: 350px;
+  height: 378px;
   background: #ffffff;
-  border: 7px solid #000000;
+  border: 5px solid #000000;
   box-sizing: border-box;
-  border-radius: 15px;
   box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  margin: 60% 5% 5% 40%;
 }
 
-.container-02 {
-  position: relative;
-  left: -6%;
-  width: 415px;
-  height: 686px;
-  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
-  background: #ffffff;
-  border: 7px solid #000000;
-  box-sizing: border-box;
-  border-radius: 15px;
-}
-
-.block-01 {
-  width: 85%;
+.block {
+  width: 90%;
   height: 55px;
+  margin: 3% 3%;
   background: #b8e5ff;
   border: 5px solid #000000;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  margin: 4% 6%;
-  text-align: center;
-  align-items: center;
-  letter-spacing: 0.2em;
-  vertical-align: middle;
 }
 
-.block-01 h1 {
+.block h1 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 37px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #000000;
+  width: 100%;
+  height: 55px;
   margin-top: 3%;
 }
 
-.img-01 {
-  margin-top: 2%;
-}
-
 .container-03 {
-  width: 86%;
-  height: 440px;
-  margin: -10% 5% 5% 6.5%;
-  background: #ffffff;
-  border: 7px solid #000000;
-  box-sizing: border-box;
-  border-radius: 15px;
-  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
+  margin: 11.2% 0% 0 37%;
 }
 
-.block-02 {
-  width: 29%;
-  height: 55px;
-  margin: 1% 35%;
+.container-04 {
+  margin: 0% 0% 0 37%;
+}
+
+.container-05 {
+  margin: 0% 0% 0 37%;
+}
+
+.container-06 {
+  margin: 0% 0% 0 37%;
+}
+
+.btn-01 {
+  margin: 1.2% 2%;
+  width: 350px;
+  height: 169px;
   background: #b8e5ff;
   border: 5px solid #000000;
-  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  text-align: center;
-  align-items: center;
-  letter-spacing: 0.2em;
-  vertical-align: middle;
-}
-
-.block-02 h1 {
-  margin-top: 2.5%;
   font-family: Poppins;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 900;
   font-size: 25px;
   line-height: 37px;
-  display: flex;
   align-items: center;
   text-align: center;
-  letter-spacing: 0.1em;
-  vertical-align: middle;
-  margin-left: 32%;
+  color: #000000;
 }
 
-.block-01 h1 {
-  margin-top: 2.5%;
-  margin-left: 35%;
+.btn-01:hover {
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+footer h1 {
+  width: 100%;
+  height: 51px;
   font-family: Poppins;
   font-style: normal;
-  font-weight: 600;
-  font-size: 25px;
+  font-weight: 900;
+  font-size: 40px;
   line-height: 37px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.1em;
-  vertical-align: middle;
+  color: #000000;
 }
 
 footer {
