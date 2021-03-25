@@ -4,47 +4,71 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./CSS/homePage.css" />
+    <link rel="stylesheet" href="./CSS/care.css" />
     <title>Document</title>
   </head>
   <body>
-    
+    <nav class="navbar">
+      <div class="container">
+        <div class="leftNav">
+          <h1>PriJour</h1>
+        </div>
+        <div class="rightNav">
+          <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a class="active" href="/diary">Diary</a></li>
+            <li><a href="/care">Care</a></li>
+            <form action="/logout" method=get> <button type="submit"> Logout </button> </form> 
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="img-01">
+      <img
+        src="../Assets/friends.svg"
+        alt="Two friends are having some good time"
+      />
+    </div>
+    <div class="mamta">
     <script>
-  
-  window.watsonAssistantChatOptions = {
-      integrationID: "5f4e2753-c59f-4870-b119-cd6b118e91dc", // The ID of this integration.
-      region: "us-east", // The region your integration is hosted in.
-      serviceInstanceID: "7341e781-e9ed-4e06-a19e-6e4a9e193cea", // The ID of your service instance.
-     
-      //open chat by default
-      openChatByDefault:true,
-     // Config option to hide the default launcher.
-    showLauncher: false,
-     //hide close button
-     hideCloseButton: true,
-     carbonTheme: 'white',
-     
-      onLoad: function(instance) { 
+      window.watsonAssistantChatOptions = {
+        integrationID: "5f4e2753-c59f-4870-b119-cd6b118e91dc", // The ID of this integration.
+        region: "us-east", // The region your integration is hosted in.
+        serviceInstanceID: "7341e781-e9ed-4e06-a19e-6e4a9e193cea", // The ID of your service instance.
+        //open chat by default
+        openChatByDefault: true,
+        // Config option to hide the default launcher.
+        showLauncher: false,
+        //hide close button
+        hideCloseButton: true,
+        carbonTheme: "white",
+        onLoad: function (instance) {
           // Instance method to adjust specific CSS variables
-      instance.updateCSSVariables({
-        'BASE-font-family': '"Times New Roman", Times, serif',
-        '$active-primary': '#009900',
-        '$focus': '#008000',
-        '$hover-primary': '#00ff00',
-        '$interactive-01': '#008000',
-        '$ui-background':'#eefeff',
-        'BASE-width': '97vw',
+          instance.updateCSSVariables({
+            "BASE-font-family": '"Times New Roman", Times, serif',
+            "$active-primary": "#009900",
+            "$focus": "#008000",
+            "$hover-primary": "#00ff00",
+            "$interactive-01": "#008000",
+            "$ui-background": "#fff",
+            "BASE-width": "50%",
+          });
+          instance.render();
+          instance.openWindow();
+        },
+      };
+      setTimeout(function () {
+        const t = document.createElement("script");
+        t.src =
+          "https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+        document.head.appendChild(t);
       });
-        instance.render();
-        instance.openWindow(); }
-    };
-  setTimeout(function(){
-    const t=document.createElement('script');
-    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
-    document.head.appendChild(t);
-  });
- // instance.openWindow();
-</script>
-
+      // instance.openWindow();
+    </script></div>
+     <!-- <footer>
+      <div class="BottomLogo">
+        <h1>PriJour</h1>
+      </div>
+    </footer> -->
   </body>
 </html>
