@@ -75,7 +75,7 @@ app.get('/home',(req,res)=>{
                     Book.find({category:category}).limit(2)
                     .then((result)=>{
                         books = result;
-                        Quote.find({category:category}).limit(2)
+                        Quote.find({category:category}).limit(3)
                         .then((result)=>{
                             quotes = result;
                             res.render('HomePage',{
