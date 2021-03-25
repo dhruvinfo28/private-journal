@@ -191,7 +191,7 @@ app.get('/yourStats',(req,res)=>{
 //Mood Analysis
 app.get('/quiz',(req,res)=>{
     if(req.user){
-        res.render('Question')
+        res.render('Question',{name:req.user.name})
     }
     else{
         res.redirect('/')
