@@ -45,9 +45,19 @@ app.get('/login',(req,res)=>{
 app.get('/', (req,res)=>{
     res.render('homePage')
 })
-//OAuth routes
 
+//OAuth routes
 require('./routes/authRoutes')(app);
+
+//Previous journals:
+app.get('/previousJournals',(req,res)=>{
+    res.render('PreviousJournals')
+})
+
+//Read Journal
+app.get('/readJournal',(req,res)=>{
+    res.render('ReadJournal');
+})
 
 //Adding a journal
 app.post('/addJournal',(req,res)=>{
