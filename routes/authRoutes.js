@@ -17,7 +17,7 @@ module.exports = (app)=>{
 
     app.get('/diary',(req,res)=>{
         if(!req.user){
-            res.redirect('/login')
+            res.redirect('/')
         }
         else{
             res.render('Diary')

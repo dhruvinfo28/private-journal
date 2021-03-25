@@ -35,15 +35,15 @@ mongoose.connect(MONGO_URI).then(()=>{console.log('Connected')})
 
 
 
-app.get('/login',(req,res)=>{
-    res.render('index');
+app.get('/home',(req,res)=>{
+    res.render('homePage');
 })
 
 
 
 //TODO need to display content from collections
 app.get('/', (req,res)=>{
-    res.render('homePage')
+    res.render('index')
 })
 
 //OAuth routes
@@ -103,6 +103,11 @@ app.get('/yourStats',(req,res)=>{
     else{
         res.redirect('/login')
     }
+})
+
+//Bot 
+app.get('/care',(req,res)=>{
+    res.render('Care');
 })
 
 app.listen(process.env.PORT || 3000);
