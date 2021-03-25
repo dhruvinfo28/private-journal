@@ -168,9 +168,5 @@ footer {
   box-sizing: border-box;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  padding: 2% 30%;
-}
-
-footer h1 {
-  margin: 0 0 0 15%;
+  padding: 2% 0 0 40%;
 }

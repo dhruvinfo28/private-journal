@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+
+body {
+  background-color: #eefeff;
+}
+
+.navbar {
+  background-color: white;
+  width: 95%;
+  height: 100px;
+  background: #ffffff;
+  border: 5px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin: 2% 2.5%;
+  position: fixed;
+}
+
+.container {
+  display: flex;
+}
+
+.leftNav {
+  padding: 2% 0% 0 10%;
+}
+
+h1 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 37px;
+  color: #000000;
+}
+
+.rightNav {
+  display: flex;
+  padding-left: 25%;
+}
+
+li {
+  max-width: 400px;
+  display: inline;
+  text-decoration: none;
+  list-style-type: none;
+  float: left;
+}
+
+.rightNav a {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 37px;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+  display: block;
+  padding: 24px 40px;
+}
+
+.container-01{
+    margin-top: 180px ;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.container-01 h1{
+font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 30px;
+line-height: 45px;
+display: flex;
+align-items: center;
+color: #000000;
+margin-bottom: 20px;
+margin-left: 5%;
+}
+
+.block{
+    width: 95%;
+height: 100%;
+background: #FFFFFF;
+border: 7px solid #000000;
+box-sizing: border-box;
+box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
+border-radius: 15px;
+margin: 1% 3.5% 3% 2.5% ;
+}
+
+canvas{
+    max-height: 95%;
+    max-width: 95%;
+    margin: 1% 1% 1% 2%;
+}
+
+footer {
+    width: 94%;
+    height: 101px;
+    margin: 6% 3% 2%;
+    background: #b8e5ff;
+    border: 5px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 2% 0 0 40%;
+  }

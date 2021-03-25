@@ -1,13 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <link rel="stylesheet" href="./CSS/yourStats.css">
+    <title>Your Stats</title>
 </head>
 <body>
-    Hi
-    <%= scoreArray %>
+    <nav class="navbar">
+        <div class="container">
+            <div class="leftNav">
+                <h1>PriJour</h1>
+            </div>
+            <div class="rightNav">
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/diary">Diary</a></li>
+                    <li><a href="/care">Care</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="stats" style="visibility: hidden;">
+        <%= scoreArray %>
+    </div>
+    <div class="container-01">
+        <h1>Your stats of last 15 Journals</h1>
+        <div class="block">
+            <canvas id="myChart"></canvas>
+            <script>
+                let a = document.querySelector(".stats").firstChild.nodeValue.trim();
+                a = a.split(",");
+                var ctx = document.getElementById("myChart").getContext("2d");
+                var chart = new Chart(ctx, {
+                    // The type of chart we want to create
+                    type: "line",
+
+                    // The data for our dataset
+                    data: {
+                        labels: [
+                        "1",
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6",
+                            "7",
+                            "8",
+                            "9",
+                            "10",
+                            "11",
+                            "12",
+                            "13",
+                            "14",
+                            "15",
+                        ],
+                        datasets: [
+                            {
+                                label: "Happiness Index",
+                                backgroundColor: "rgb(184, 229, 255)",
+                                borderColor: "rgb(184, 229, 255)",
+                                data: a,
+                            },
+                        ],
+                    },
+
+                    // Configuration options go here
+                    options: {},
+                });
+            </script>
+        </div>
+    </div>
+    <script>
+      //   document.querySelector(".stats")
+      //   let a = document.querySelector(".stats").firstChild.nodeValue.trim()
+      //   a = a.split(',')
+      // console.log(a)
+      //         a = a.map((element)=>{
+      //     element=parseFloat(element)
+      // })
+      // console.log(a)
+    </script>
+    <footer>
+        <div class="BottomLogo">
+            <h1>PriJour</h1>
+        </div>
+    </footer>
+
+    <!-- Hi -->
 </body>
+
 </html>
