@@ -7,7 +7,10 @@ const vader = require('vader-sentiment');
 
 //Models
 const Journal = require('./models/journal')
- 
+const Movie = require('./models/movie')
+const Book = require('./models/book')
+const Quote = require('./models/quote')
+
 const app = express();
 
 app.set('view engine','ejs');
@@ -32,11 +35,43 @@ app.use(passport.session())
 
 mongoose.connect(MONGO_URI).then(()=>{console.log('Connected')})
 
-
-
+let user_score=0;
 
 app.get('/home',(req,res)=>{
-    res.render('homePage');
+    let  books, movies,quotes,category;
+        if(user_score>90){
+            category = 'depression'
+        }
+        else if(user_score<20){
+            category = 'happy'
+        }
+        Movie.find({category:category}).limit(2)
+            .then((result)=>{
+                movies = result;
+                console.log(movies)
+                Book.find({category:category}).limit(2)
+                .then((result)=>{
+                    books = result;
+                    Quote.find({category:category}).limit(2)
+                    .then((result)=>{
+                        quotes = result;
+                        res.render('HomePage',{
+                            movies:movies,
+                            books:books,
+                            quotes:quotes
+                        })
+                    })
+                    .catch((err)=>{
+                        console.log(err)
+                    })
+                })
+                .catch((err)=>{
+                    console.log(err)
+                })
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
 })
 
 
@@ -133,6 +168,20 @@ app.get('/quiz',(req,res)=>{
 //Bot 
 app.get('/care',(req,res)=>{
     res.render('Care');
+})
+
+//Handle category info
+
+app.post('/categories',(req,res)=>{
+    if(req.user){
+        let x = req.body.cat;
+        x = x.split(',');
+        let sum = 0;
+        for(let i=0;i<x.length;i++){
+            sum+= parseInt(x[i]);
+        }
+        user_score = sum;
+    }
 })
 
 app.listen(process.env.PORT || 3000);

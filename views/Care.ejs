@@ -42,11 +42,16 @@
         instance.render();
         instance.openWindow();
 
-        const btn = document.querySelector('#endChat')
-        btn.addEventListener('click', (e) => {
-          e.preventDefault;
+        // const btn = document.querySelector('#endChat')
+        // btn.addEventListener('click', (e) => {
+        //   e.preventDefault;
+        //   instance.destroySession();
+        //   location.reload();
+        // })
+
+        window.onbeforeunload((instance)=>{
           instance.destroySession();
-          location.reload();
+          location.reload();        
         })
       }
     };
