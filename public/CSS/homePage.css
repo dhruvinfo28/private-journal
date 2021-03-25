@@ -42,7 +42,7 @@ h1 {
 }
 
 .rightNav {
-  padding-left: 20% ;
+  padding-left: 20%;
   max-width: 50%;
   display: flex;
   justify-content: space-between;
@@ -55,7 +55,7 @@ li {
   float: left;
 }
 
-.rightNav button{
+.rightNav button {
   display: flex;
   font-family: Poppins;
   font-style: normal;
@@ -69,21 +69,21 @@ li {
   padding: 24px 40px;
   justify-content: center;
   width: 180px;
-  margin-top:15px ;
+  margin-top: 15px;
   width: 180px;
-  margin-top:15px ;
+  margin-top: 15px;
   width: 180px;
-  margin-top:15px ;
+  margin-top: 15px;
   width: 180px;
-height: 55px;
-letter-spacing: 0.1em;
-background: #B8E5FF;
-border: 5px solid #000000;
-box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
-border-radius: 10px;
+  height: 55px;
+  letter-spacing: 0.1em;
+  background: #b8e5ff;
+  border: 5px solid #000000;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
 }
 
-.rightNav button:hover{
+.rightNav button:hover {
   box-shadow: 10px 10px 0px rgba(0, 0, 0, 0);
   cursor: pointer;
 }
@@ -100,7 +100,6 @@ border-radius: 10px;
   display: block;
   padding: 24px 40px;
 }
-
 
 .container-04 {
   display: flex;

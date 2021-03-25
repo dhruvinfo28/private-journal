@@ -158,6 +158,12 @@ button:active {
   margin: -10% 30%;
 }
 
+.btn-01{
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0);
+  background: #b8e5ff;
+  border: 5px solid #000000;
+  border-radius: 10px;
+}
 /* .active {
   align-items: center;
   width: 80%;

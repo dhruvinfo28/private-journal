@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>
-      Simple Javascript Quiz Demo
+      PriJour &#124; Mood Analyser
     </title>
 
     <!-- (A) LOAD QUIZ CSS + JS -->
@@ -10,7 +10,28 @@
     <script src="./Scripts/quiz.js"></script>
   </head>
   <body>
+    <nav class="navbar">
+      <div class="container">
+        <div class="leftNav">
+          <h1>PriJour</h1>
+        </div>
+        <div class="rightNav">
+          <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/diary">Diary</a></li>
+            <li><a href="/care">Care</a></li>
+            <li><form action="/logout" method=get> <button type="submit"> Logout </button></form></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
     <!-- (B) QUIZ CONTAINER -->
     <div id="quizWrap"></div>
+    <footer>
+      <div class="BottomLogo">
+        <h1>PriJour</h1>
+      </div>
+    </footer>
   </body>
 </html>
