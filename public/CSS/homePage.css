@@ -150,7 +150,8 @@ li {
 }
 
 footer {
-  width: 92%;
+  display: flex;
+  width: 94%;
   height: 101px;
   margin: 6% 3% 2%;
   background: #b8e5ff;
@@ -158,5 +159,6 @@ footer {
   box-sizing: border-box;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  padding: 2% 0 0 40%;
+  justify-content: center;
+  padding: 2%;
 }
