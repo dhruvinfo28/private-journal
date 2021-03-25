@@ -41,16 +41,34 @@ h1 {
 }
 
 .rightNav {
+  padding-left: 20% ;
+  max-width: 50%;
   display: flex;
-  padding-left: 25%;
+  justify-content: space-between;
 }
 
 li {
-  max-width: 400px;
-  display: inline;
+  max-width: 150px;
   text-decoration: none;
   list-style-type: none;
   float: left;
+}
+
+.rightNav button{
+  display: flex;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 37px;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+  padding: 24px 40px;
+  justify-content: center;
+  width: 180px;
+  margin-top:15px ;
 }
 
 .rightNav a {
