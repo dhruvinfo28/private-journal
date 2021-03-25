@@ -123,6 +123,13 @@ app.get('/yourStats',(req,res)=>{
     }
 })
 
+//Mood Analysis
+app.get('/quiz',(req,res)=>{
+    if(req.user){
+        res.render('Question')
+    }
+})
+
 //Bot 
 app.get('/care',(req,res)=>{
     res.render('Care');

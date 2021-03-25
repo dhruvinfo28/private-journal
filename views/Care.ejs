@@ -1,50 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./CSS/homePage.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    
-    <script>
-  
-  window.watsonAssistantChatOptions = {
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./CSS/homePage.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="endChat">
+    End conversation
+  </button>
+  <script>
+
+    window.watsonAssistantChatOptions = {
       integrationID: "5f4e2753-c59f-4870-b119-cd6b118e91dc", // The ID of this integration.
       region: "us-east", // The region your integration is hosted in.
       serviceInstanceID: "7341e781-e9ed-4e06-a19e-6e4a9e193cea", // The ID of your service instance.
-     
-      //open chat by default
-      openChatByDefault:true,
-     // Config option to hide the default launcher.
-    showLauncher: false,
-     //hide close button
-     hideCloseButton: true,
-     carbonTheme: 'white',
-     
-      onLoad: function(instance) { 
-          // Instance method to adjust specific CSS variables
-      instance.updateCSSVariables({
-        'BASE-font-family': '"Times New Roman", Times, serif',
-        '$active-primary': '#009900',
-        '$focus': '#008000',
-        '$hover-primary': '#00ff00',
-        '$interactive-01': '#008000',
-        '$ui-background':'#eefeff',
-        'BASE-width': '97vw',
-      });
-        instance.render();
-        instance.openWindow(); }
-    };
-  setTimeout(function(){
-    const t=document.createElement('script');
-    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
-    document.head.appendChild(t);
-  });
- // instance.openWindow();
-</script>
 
-  </body>
+      //open chat by default
+      openChatByDefault: true,
+      // Config option to hide the default launcher.
+      showLauncher: false,
+      //hide close button
+      hideCloseButton: true,
+      carbonTheme: 'white',
+
+      onLoad: function (instance) {
+        // Instance method to adjust specific CSS variables
+        instance.updateCSSVariables({
+          'BASE-font-family': '"Times New Roman", Times, serif',
+          '$active-primary': '#009900',
+          '$focus': '#008000',
+          '$hover-primary': '#00ff00',
+          '$interactive-01': '#008000',
+          '$ui-background': '#eefeff',
+          'BASE-width': '97vw',
+        });
+        instance.render();
+        instance.openWindow();
+
+        const btn = document.querySelector('#endChat')
+        btn.addEventListener('click', (e) => {
+          e.preventDefault;
+          instance.destroySession();
+          location.reload();
+        })
+      }
+    };
+    setTimeout(function () {
+      const t = document.createElement('script');
+      t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+      document.head.appendChild(t);
+    });
+ // instance.openWindow();
+
+
+
+  </script>
+
+</body>
+
 </html>
