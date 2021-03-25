@@ -42,7 +42,7 @@ h1 {
 }
 
 .rightNav {
-  padding-left: 20% ;
+  padding-left: 15% ;
   max-width: 50%;
   display: flex;
   justify-content: space-between;
@@ -84,9 +84,14 @@ border-radius: 10px;
 }
 
 .rightNav button:hover{
-  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0);
-  cursor: pointer;
-}
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
+  
+  .rightNav button:active {
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 00);
+  }
+  
 .rightNav a {
   font-family: Poppins;
   font-style: normal;
@@ -127,6 +132,7 @@ border-radius: 10px;
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 10px;
+    justify-content: center;
   }
   #quizAns input[type=radio] { display: none; }
   #quizAns label {
@@ -142,6 +148,15 @@ border-radius: 10px;
     cursor: pointer;
     text-align: center;
   }
+
+  #quizAns label:active{
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0);
+  }
+
+  #quizAns label:hover{
+    background: #b8e5ff;
+  }
+
   #quizAns label.correct {
     background: #d8ffc4;
     border: 1px solid #60a03f;
