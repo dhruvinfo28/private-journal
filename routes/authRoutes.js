@@ -12,7 +12,7 @@ module.exports = (app)=>{
 
     app.get('/logout',(req,res)=>{
         req.logout();
-        res.send(req.user);
+        res.redirect('/')
     })
 
     app.get('/diary',(req,res)=>{
@@ -20,7 +20,7 @@ module.exports = (app)=>{
             res.redirect('/')
         }
         else{
-            res.render('Diary')
+            res.render('Diary',{name:req.user.name})
         }
     })
 
