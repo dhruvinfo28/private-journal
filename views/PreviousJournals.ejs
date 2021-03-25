@@ -33,7 +33,14 @@
       </div>
     </div>
     <div class="rightCol">
-      <div class="container-03">
+      <% for(let i=0;i < journalArray.length; i++) { %>
+          <form action="/readJournal/<%=journalArray[i]._id%>" method="get">
+              <a href="">
+                <button type="submit"> <%= journalArray[i].date %></button>
+              </a>
+          </form>
+      <% } %>  
+      <!-- <div class="container-03">
         <a href=""
           ><button class="btn-01">Day 8, May, 2021</button></a
         >
@@ -50,7 +57,7 @@
       <div class="container-06">
         <a href=""><button class="btn-01">Day 2, May, 2021</button></a>
         <a href=""><button class="btn-01">Day 1, May, 2021</button></a>
-      </div>
+      </div> -->
     </div>
     <footer>
       <div class="BottomLogo">

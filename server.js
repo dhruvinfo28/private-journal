@@ -51,12 +51,30 @@ require('./routes/authRoutes')(app);
 
 //Previous journals:
 app.get('/previousJournals',(req,res)=>{
-    res.render('PreviousJournals')
+    if(req.user){
+        Journal.find({email:req.user.email}).sort({date:-1})
+            .then((data)=>{
+                res.render('PreviousJournals',{journalArray: data})
+            })
+            
+    }
+    else{
+        res.redirect('/')
+    }
 })
 
 //Read Journal
-app.get('/readJournal',(req,res)=>{
-    res.render('ReadJournal');
+app.get('/readJournal/:id',(req,res)=>{
+    if(req.user){
+        Journal.findById(req.params.id)
+            .then((result)=>{
+                console.log(result);
+                res.render('ReadJournal',{journal: result});
+            })
+    }
+    else{
+        res.redirect('/');
+    }
 })
 
 //Adding a journal
