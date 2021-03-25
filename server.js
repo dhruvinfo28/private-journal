@@ -3,10 +3,11 @@ const express = require('express')
 const passport  = require('passport')
 const mongoose = require('mongoose')
 const cookieSession = require('cookie-session')
-const Journal = require('./models/journal')
 const vader = require('vader-sentiment');
 
-
+//Models
+const Journal = require('./models/journal')
+ 
 const app = express();
 
 app.set('view engine','ejs');
@@ -32,10 +33,15 @@ app.use(passport.session())
 mongoose.connect(MONGO_URI).then(()=>{console.log('Connected')})
 
 
+
+
 app.get('/login',(req,res)=>{
     res.render('index');
 })
 
+
+
+//TODO need to display content from collections
 app.get('/', (req,res)=>{
     res.render('homePage')
 })
