@@ -36,6 +36,7 @@ app.use(passport.session())
 mongoose.connect(MONGO_URI).then(()=>{console.log('Connected')})
 
 let user_score=0;
+let user_array = [];
 
 app.get('/home',(req,res)=>{
     let  books, movies,quotes,category;
@@ -44,6 +45,28 @@ app.get('/home',(req,res)=>{
         }
         else if(user_score<20){
             category = 'happy'
+        }
+        else if(user_array.length>0){
+            let max_index = 0;
+            let max = user_array[0];
+            for(let i=1; i<user_array.length;i++){
+                if(user_array[i]>max){
+                    max = user_array[i];
+                    max_index = i;
+                }
+            }
+            /*
+            index 0: Relationships
+            index 1: Work
+            index 2: health
+            index 3: loss
+            */
+            switch(max_index){
+                case 0: category = 'relations'; break;
+                case 1: category = 'work'; break;
+                case 2: category = 'health'; break;
+                case 3: category = 'loss'; break;
+            }
         }
         Movie.find({category:category}).limit(2)
             .then((result)=>{
@@ -181,6 +204,7 @@ app.post('/categories',(req,res)=>{
             sum+= parseInt(x[i]);
         }
         user_score = sum;
+        user_array = x;
     }
 })
 
