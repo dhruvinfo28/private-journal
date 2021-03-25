@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    This is the admin panel
+    <form action="/admin/content/playlist" method="post">
+        For playlist<br>
+        <label for="category">Category</label>
+        <input type="text" name="category">
+        <label for="title">Title</label>
+        <input type="text" name="title">
+        <label for="content">Content</label>
+        <textarea name="content" id="" cols="30" rows="10"></textarea>
+        <label for="link">Link</label>
+        <input type="text" name="link">
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/admin/content/book" method="post">
+        For book <br>
+        <label for="category">Category</label>
+        <input type="text" name="category">
+        <label for="title">Title</label>
+        <input type="text" name="title">
+        <label for="content">Content</label>
+        <textarea name="content" id="" cols="30" rows="10"></textarea>
+        <label for="link">Link</label>
+        <input type="text" name="link">
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/admin/content/quote" method="post">
+        For quote <br>
+        <label for="category">Category</label>
+        <input type="text" name="category">
+        <label for="quote">Quote</label>
+        <input type="text" name="quote" placeholder="Quote">
+        <label for="writer">Writer</label>
+        <input type="text" name="writer" id="">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

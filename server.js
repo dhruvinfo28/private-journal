@@ -105,4 +105,7 @@ app.get('/yourStats',(req,res)=>{
     }
 })
 
+//Admin routes
+require('./routes/adminRoutes')(app);
+
 app.listen(process.env.PORT || 3000);

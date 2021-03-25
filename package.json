@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/dhruvinfo28/private-journal#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cookie-session": "^1.4.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
