@@ -28,26 +28,26 @@
         <div class="block-01">
           <h1>Books</h1>
            <% for(let i=0; i < books.length ; i++) {%>
-            <div style="border: 2px solid red;">
-              <%= books[i].title %>
-              <%= books[i].content %>
+            <div class="contain">
+              <div class="title"><%= books[i].title %></div>
+              <div class="content"><%= books[i].content.substring(1,200) %> . . .</div>
             </div>
             <% }%>
         </div>
       </div>
-      <div class="img-01">
+      <!-- <div class="img-01">
         <img
           src="../Assets/friends.svg"
           alt="Two friends are having some good time"
         />
-      </div>
+      </div> -->
       <div class="container-02">
         <div class="block-01">
           <h1>Quotes</h1>
           <% for(let i=0; i < quotes.length ; i++){ %>
-            <div style="border: 2px solid red">
-              <%= quotes[i].quote %>
-              <%= quotes[i].writer %>
+            <div class="contain">
+              <div class="content">"<%= quotes[i].quote %>"</div>
+              <div class="title"><%= quotes[i].writer %></div>
             </div>
           <% } %>
         </div>
@@ -56,11 +56,13 @@
     <div class="container-03">
       <div class="block-02">
         <h1>Playlists</h1>
-        
+      </div>
+        <div class="frames">
         <% for(let i=0;i < movies.length; i++){ %>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=movies[i].link%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="530" height="300" src="https://www.youtube.com/embed/<%=movies[i].link%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             
         <% } %>
+      
       </div>
     </div>
     <footer>
