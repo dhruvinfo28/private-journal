@@ -25,10 +25,12 @@ body {
 
 .container {
   display: flex;
+  justify-content: center;
 }
 
 .leftNav {
-  padding: 2% 0% 0 10%;
+  padding-top: 25px;
+  padding-left: 1%;
 }
 
 h1 {
@@ -41,20 +43,18 @@ h1 {
 }
 
 .rightNav {
-  padding-left: 15% ;
+  padding-left: 10%;
   max-width: 50%;
-  display: flex;
-  justify-content: space-between;
 }
 
 li {
-  max-width: 150px;
+  width: 22%;
   text-decoration: none;
   list-style-type: none;
   float: left;
 }
 
-.rightNav button{
+.rightNav button {
   display: flex;
   font-family: Poppins;
   font-style: normal;
@@ -67,8 +67,15 @@ li {
   text-decoration: none;
   padding: 24px 40px;
   justify-content: center;
-  width: 180px;
-  margin-top:15px;
+  margin-top: 15px;
+  margin-left: 15%;
+  width: 140px;
+  height: 55px;
+  letter-spacing: 0.1em;
+  background: #b8e5ff;
+  border: 5px solid #000000;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
 }
 
 .rightNav a {
@@ -119,11 +126,11 @@ textarea[placeholder="Jot down your thoughts . . ."] {
 }
 
 .container-01 {
-  margin: 13% 5% 0 5%;
+  margin: 180px 5% 0 5%;
 }
 
 button {
-  width: 340px;
+  width: 25%;
   height: 55px;
   margin: 0 0 0 5.5%;
   box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
@@ -151,13 +158,13 @@ button:active {
 }
 
 .btn-04 {
-  width: 558px;
+  width: 40%;
   height: 76px;
   background: #b8e5ff;
   border: 5px solid #000000;
   box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  margin: -10% 30%;
+  margin: -10% 30% 0% 30%;
 }
 
 .btn-01{
