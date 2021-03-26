@@ -68,11 +68,6 @@ li {
   text-decoration: none;
   padding: 24px 40px;
   justify-content: center;
-  width: 180px;
-  margin-top: 15px;
-  width: 180px;
-  margin-top: 15px;
-  width: 180px;
   margin-top: 15px;
   width: 180px;
   height: 55px;
@@ -87,6 +82,7 @@ li {
   box-shadow: 10px 10px 0px rgba(0, 0, 0, 0);
   cursor: pointer;
 }
+
 .rightNav a {
   font-family: Poppins;
   font-style: normal;
@@ -112,14 +108,15 @@ li {
 
 .container-04 {
   display: flex;
-  margin: 12% 0.5%;
+  margin-top: 180px;
+  margin-left: 0;
+  justify-content: space-evenly;
+  margin-bottom: 12%;
 }
 
 .container-01 {
-  position: relative;
-  width: 415px;
-  height: 686px;
-  left: 6%;
+  width: 580px;
+  height: 650px;
   background: #ffffff;
   border: 7px solid #000000;
   box-sizing: border-box;
@@ -128,10 +125,8 @@ li {
 }
 
 .container-02 {
-  position: relative;
-  left: -6%;
-  width: 415px;
-  height: 686px;
+  width: 580px;
+  height: 650px;
   box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
   background: #ffffff;
   border: 7px solid #000000;
@@ -164,7 +159,7 @@ li {
 .container-03 {
   width: 86%;
   height: 440px;
-  margin: -10% 5% 5% 6.5%;
+  margin: -10% 5% 5% 7%;
   background: #ffffff;
   border: 7px solid #000000;
   box-sizing: border-box;
@@ -190,6 +185,28 @@ li {
   margin-top: 2%;
 }
 
+.title{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 40px;
+    color: #000000;
+}
+
+.content{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000;
+}
+
+.contain{
+  margin: 10% 0;
+}
+
 footer {
   display: flex;
   width: 94%;
@@ -202,4 +219,16 @@ footer {
   border-radius: 10px;
   justify-content: center;
   padding: 2%;
+}
+
+.frames{
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5% 3% ;
+}
+
+iframe{
+  border: 5px solid #000000;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
 }

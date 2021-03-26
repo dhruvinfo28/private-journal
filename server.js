@@ -36,29 +36,57 @@ app.use(passport.session())
 mongoose.connect(MONGO_URI).then(()=>{console.log('Connected')})
 
 let user_score=0;
+let user_array = [];
 
 app.get('/home',(req,res)=>{
-    let  books, movies,quotes,category;
-        if(user_score>90){
-            category = 'depression'
-        }
-        else if(user_score<20){
-            category = 'happy'
-        }
-        Movie.find({category:category}).limit(2)
-            .then((result)=>{
-                movies = result;
-                console.log(movies)
-                Book.find({category:category}).limit(2)
+    if(req.user){
+        let  books, movies,quotes,category;
+            if(user_score>90){
+                category = 'depression'
+            }
+            else if(user_score<20){
+                category = 'happy'
+            }
+            else if(user_array.length>0){
+                let max_index = 0;
+                let max = user_array[0];
+                for(let i=1; i<user_array.length;i++){
+                    if(user_array[i]>max){
+                        max = user_array[i];
+                        max_index = i;
+                    }
+                }
+                /*
+                index 0: Relationships
+                index 1: Work
+                index 2: health
+                index 3: loss
+                */
+                switch(max_index){
+                    case 0: category = 'relations'; break;
+                    case 1: category = 'work'; break;
+                    case 2: category = 'health'; break;
+                    case 3: category = 'loss'; break;
+                }
+            }
+            Movie.find({category:category}).limit(2)
                 .then((result)=>{
-                    books = result;
-                    Quote.find({category:category}).limit(2)
+                    movies = result;
+                    Book.find({category:category}).limit(2)
                     .then((result)=>{
-                        quotes = result;
-                        res.render('HomePage',{
-                            movies:movies,
-                            books:books,
-                            quotes:quotes
+                        books = result;
+                        Quote.find({category:category}).limit(3)
+                        .then((result)=>{
+                            quotes = result;
+                            res.render('homePage',{
+                                name: req.user.name,
+                                movies:movies,
+                                books:books,
+                                quotes:quotes
+                            })
+                        })
+                        .catch((err)=>{
+                            console.log(err)
                         })
                     })
                     .catch((err)=>{
@@ -68,10 +96,10 @@ app.get('/home',(req,res)=>{
                 .catch((err)=>{
                     console.log(err)
                 })
-            })
-            .catch((err)=>{
-                console.log(err)
-            })
+    }
+    else{
+        res.redirect('/')
+    }
 })
 
 
@@ -89,7 +117,7 @@ app.get('/previousJournals',(req,res)=>{
     if(req.user){
         Journal.find({email:req.user.email}).sort({date:-1})
             .then((data)=>{
-                res.render('PreviousJournals',{journalArray: data})
+                res.render('PreviousJournals',{name: req.user.name,journalArray: data})
             })
             
     }
@@ -103,8 +131,7 @@ app.get('/readJournal/:id',(req,res)=>{
     if(req.user){
         Journal.findById(req.params.id)
             .then((result)=>{
-                console.log(result);
-                res.render('ReadJournal',{journal: result});
+                res.render('ReadJournal',{name: req.user.name,journal: result});
             })
     }
     else{
@@ -127,9 +154,11 @@ app.post('/addJournal',(req,res)=>{
         }).save()
             .then((a)=>{
                 //Prompt saying journal recorded
-                console.log(a)
                 res.redirect('/diary')
             })
+    }
+    else{
+        res.redirect('/')
     }
 })
 
@@ -145,6 +174,7 @@ app.get('/yourStats',(req,res)=>{
                     compounds.push(result[i].sentiment);
                 }
                 res.render('stats',{
+                    name: req.user.name,
                    scoreArray: compounds
                 })
             })
@@ -161,13 +191,21 @@ app.get('/yourStats',(req,res)=>{
 //Mood Analysis
 app.get('/quiz',(req,res)=>{
     if(req.user){
-        res.render('Question')
+        res.render('Question',{name:req.user.name})
+    }
+    else{
+        res.redirect('/')
     }
 })
 
 //Bot 
 app.get('/care',(req,res)=>{
-    res.render('Care');
+    if(req.user){
+        res.render('Care', {name: req.user.name});
+    }
+    else{
+        res.redirect('/')
+    }
 })
 
 //Handle category info
@@ -181,6 +219,10 @@ app.post('/categories',(req,res)=>{
             sum+= parseInt(x[i]);
         }
         user_score = sum;
+        user_array = x;
+    }
+    else{
+        res.redirect('/')
     }
 })
 
