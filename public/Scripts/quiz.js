@@ -187,7 +187,7 @@ var quiz = {
         setTimeout(function () {
             if (quiz.now < quiz.data.length) { quiz.draw(); }
             else {
-                quiz.hQn.innerHTML = `This is the end of quiz`;
+                quiz.hQn.innerHTML = `This is the end of quiz. Please visit home to see you personalized field`;
                 quiz.hAns.innerHTML = "";
 
                 var http = new XMLHttpRequest();
