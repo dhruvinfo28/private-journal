@@ -78,7 +78,7 @@ app.get('/home',(req,res)=>{
                         Quote.find({category:category}).limit(3)
                         .then((result)=>{
                             quotes = result;
-                            res.render('HomePage',{
+                            res.render('homePage',{
                                 name: req.user.name,
                                 movies:movies,
                                 books:books,
