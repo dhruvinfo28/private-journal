@@ -30,7 +30,7 @@
            <% for(let i=0; i < books.length ; i++) {%>
             <div class="contain">
               <div class="title"><%= books[i].title %></div>
-              <div class="content"><%= books[i].content.substring(1,200) %> . . .</div>
+              <div class="content"><%= books[i].content.substring(0,200) %> . . .</div>
             </div>
             <% }%>
         </div>
